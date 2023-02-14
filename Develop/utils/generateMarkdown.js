@@ -15,16 +15,16 @@
 
 const fs = require('fs');
 const inquirer = require('inquirer');
-const index = require('../index.js');
+const index = require('./index');
 
 function renderLicenseBadge(license) {
   let badge = '';
   if (license === 'MIT') {
-    badge = ''
+    badge = 'https://img.shields.io/github/license/judgedgeo/readme-or-readme-not?label=license&style=for-the-badge'
   } else if (license === 'Apache 2.0') {
-    badge = ''
+    badge = '![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)'
   } else if (license === 'GPL v3.0') {
-    badge = ''
+    badge = '![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg'
   }
   return badge;
 }
@@ -32,7 +32,7 @@ function renderLicenseBadge(license) {
 function renderLicenseLink(license) {
   let licenseLink = 'https://choosealicense.com/licenses/mit/';
   if (license === 'MIT') {
-    licenseLink = ''
+    licenseLink = 'https://choosealicense.com/licenses/mit/'
   } else if (license === 'Apache 2.0') {
     licenseLink = 'https://www.apache.org/licenses/LICENSE-2.0'
   } else if (license === 'GPL v3.0') {
@@ -47,24 +47,24 @@ function renderLicenseSection(license) {
     licenseSection - ''
   } else {
     licenseSection =
-      'License: $(license'
+      `License: $(license`
   }
   return licenseSection;
 }
 function generateMarkdown(answer) {
 
-  return'
+  return`
 # ${answer.title}
 
 ## ${renderLicenseSection(answer.license)} ${renderLicenseBadge(answer.license)}
 ### ${renderLicenseLink(answer.license)}
 
 ## Table of Contents:
-### = [License](#license)
-### = [Installation](#installation)
-### = [Usage](#usage)
-### = [Contributors](#contributors)
-### = [Questions](#questions)
+### * [License](#license)
+### * [Installation](#installation)
+### * [Usage](#usage)
+### * [Contributors](#contributors)
+### * [Questions](#questions)
 
 ## Installation:
 ### You must install the following for this app to function:
@@ -78,15 +78,13 @@ function generateMarkdown(answer) {
 
 ## Tests:
 ### Run the following commands in your terminal to test the app:
-### ${answer.test}
+### ${ answer.test }
 
 ## Questions:
 ### If you have any questions, you may contact me at either
-### GitHUb: https:github.com/${answer.askMe}
+### GitHUb: https: github.com / ${ answer.askMe }
 ### or
-### Email: ${answer.email}
-';
+### Email: ${ answer.email }
+`;
 }
-
-
 module.exports = generateMarkdown;

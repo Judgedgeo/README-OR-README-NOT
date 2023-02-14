@@ -147,7 +147,7 @@ const writeToFile = fileContent => {
                 return;
             }
             resolve({
-                ok: ture
+                ok: true
             });
         });
     });

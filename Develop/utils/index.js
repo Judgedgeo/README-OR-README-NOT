@@ -13,8 +13,10 @@
 
 
 const fs = require('fs');
-const inquirer = require('inquire');
+const inquirer = require('inquirer');
 const generateMarkdown = require('./generateMarkdown');
+
+
 
 const questions = [
     {
@@ -30,6 +32,7 @@ const questions = [
             }
         }
     },
+
     {
         type: 'list',
         name: 'license',
@@ -44,6 +47,7 @@ const questions = [
             }
         }
     },
+
     {
         type: 'input',
         name: 'description',
@@ -57,6 +61,7 @@ const questions = [
             }
         }
     },
+
     {
         type: 'input',
         name: 'installation',
@@ -127,7 +132,7 @@ const questions = [
         name: 'email',
         message: 'What is your email so there is another way to be reached for questions?',
         validate: emailInput => {
-            if (askMeInput) {
+            if (emailInput) {
                 return true;
             } else {
                 console.log('Please provide your username so others can reach out to you with questions')
@@ -135,7 +140,6 @@ const questions = [
             }
         }
     }
-
 ];
 
 //function to Write README file
@@ -158,7 +162,7 @@ function init() {
     inquirer.prompt(questions)
         .then(function (answer) {
             console.log(answer);
-            var fileContent = generateMarkdwon(answer);
+            var fileContent = generateMarkdown(answer);
             writeToFile(fileContent)
         });
 }

@@ -20,11 +20,11 @@ const index = require('./index');
 function renderLicenseBadge(license) {
   let badge = '';
   if (license === 'MIT') {
-    badge = 'https://img.shields.io/github/license/judgedgeo/readme-or-readme-not?label=license&style=for-the-badge'
+    badge = '![License](https://img.shields.io/github/license/judgedgeo/readme-or-readme-not?label=license&style=for-the-badge)'
   } else if (license === 'Apache 2.0') {
     badge = '![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)'
   } else if (license === 'GPL v3.0') {
-    badge = '![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg'
+    badge = '![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)'
   }
   return badge;
 }
@@ -47,7 +47,7 @@ function renderLicenseSection(license) {
     licenseSection - ''
   } else {
     licenseSection =
-      `License: $(license`
+      `License: `
   }
   return licenseSection;
 }
@@ -68,13 +68,13 @@ function generateMarkdown(answer) {
 
 ## Installation:
 ### You must install the following for this app to function:
-### $(answer.installation)
+### ${answer.installation}
 
 ## Usage:
-### $(answer.usage)
+### ${answer.usage}
 
 ## Contributors:
-### $(answer.contributions)
+### ${answer.contributions}
 
 ## Tests:
 ### Run the following commands in your terminal to test the app:
@@ -88,3 +88,5 @@ function generateMarkdown(answer) {
 `;
 }
 module.exports = generateMarkdown;
+// i went on line 85
+//

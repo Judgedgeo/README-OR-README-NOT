@@ -13,17 +13,17 @@
 
 ## Installation:
 ### You must install the following for this app to function:
-### Follow the steps above
+### right click on generateMarkdown, enter Node index.js and answer the questions
 
 ## Usage:
-### Generate a README file
+### to generate a README fiel for the user
 
 ## Contributors:
-### Jsut the follow the steps
+### follow the steps
 
 ## Tests:
 ### Run the following commands in your terminal to test the app:
-### Follow the steps and type away
+### by following the steps above
 
 ## Questions:
 ### If you have any questions, you may contact me at either

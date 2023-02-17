@@ -29,5 +29,5 @@
 ### GitHUb: https: github.com / ${ answer.askMe }
 ### or
 ### Email: ${ answer.email }
-  ';
+';
 }

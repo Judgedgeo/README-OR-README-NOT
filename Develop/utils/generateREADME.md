@@ -16,7 +16,7 @@
 ### right click on generateMarkdown, enter Node index.js and answer the questions
 
 ## Usage:
-### to generate a README fiel for the user
+### to generate a README file for the user
 
 ## Contributors:
 ### follow the steps
